@@ -1,24 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSwipeable } from "react-swipeable";
+import "./App.css";
+import {
+  AiOutlineLeft,
+  AiOutlineRight,
+  AiOutlineUp,
+  AiOutlineDown,
+} from "react-icons/ai";
+import { IconContext } from "react-icons";
+import Body from "./Body";
 
 function App() {
+  const handlers = useSwipeable({
+    onSwipedDown: (eventData) => console.log("User Swiped Down!", eventData),
+    onSwipedUp: (eventData) => console.log("User Swiped Up!", eventData),
+    onSwipedRight: (eventData) => console.log("User Swiped Right!", eventData),
+    onSwipedLeft: (eventData) => console.log("User Swiped Left!", eventData),
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <IconContext.Provider
+        value={{ color: "blue", className: "vertical-icon" }}
+      >
+        <AiOutlineUp />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <IconContext.Provider
+            value={{ color: "blue", className: "horizontal-icon" }}
+          >
+            <AiOutlineLeft />
+            <div className="body" {...handlers}>
+              <Body />
+            </div>
+            <AiOutlineRight />
+          </IconContext.Provider>
+        </div>
+        <AiOutlineDown />
+      </IconContext.Provider>
     </div>
   );
 }
