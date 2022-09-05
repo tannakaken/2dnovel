@@ -10,8 +10,12 @@
 .body {
   border: solid;
   border-radius: 10px;
-  margin: 20px;
   padding: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
 .horizontal-icon {
