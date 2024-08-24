@@ -43,24 +43,36 @@ export const Novel2DViewer = (props: Props) => {
    */
   const canGoDown = props.pages[i]?.[j + 1] !== undefined;
   const handlers = useSwipeable({
+    /**
+     * 下スワイプで上移動
+     */
     onSwipedDown: () => {
-      if (canGoDown) {
-        setNextJ((j) => j + 1);
-      }
-    },
-    onSwipedUp: () => {
       if (canGoUp) {
         setNextJ((j) => j - 1);
       }
     },
-    onSwipedRight: () => {
-      if (canGoRight) {
-        setNextI((i) => i + 1);
+    /**
+     * 上スワイプで下移動
+     */
+    onSwipedUp: () => {
+      if (canGoDown) {
+        setNextJ((j) => j + 1);
       }
     },
-    onSwipedLeft: () => {
+    /**
+     * 右スワイプで左移動
+     */
+    onSwipedRight: () => {
       if (canGoLeft) {
         setNextI((i) => i - 1);
+      }
+    },
+    /**
+     * 左スワイプで右移動
+     */
+    onSwipedLeft: () => {
+      if (canGoRight) {
+        setNextI((i) => i + 1);
       }
     },
   });
