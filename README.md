@@ -50,3 +50,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 多分 Cloudflare Workers で作れそう
 
 https://qiita.com/khayama/items/87640de36b72d2ceaade
+
+## TODO VITE への移行
+
+https://qiita.com/takiguchi-yu/items/21f0c81b2c5ad198f7c1
