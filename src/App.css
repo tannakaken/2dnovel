@@ -1,4 +1,4 @@
-.App {
+.app {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,17 +15,21 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  white-space: nowrap;
+  max-width: 50%;
 }
 
 .horizontal-icon {
   width: 50px;
-  transform: scaleY(3);
+  transform: scaleY(4);
+  cursor: pointer;
 }
 
 .vertical-icon {
   width: 50px;
-  transform: scaleX(3);
+  transform: scaleX(4);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .horizontal-icon:hover {

@@ -1,13 +1,19 @@
 import React from "react";
+import { Pages } from "./novels/novel2d";
 
-const Body = () => {
+type Props = {
+  i: number;
+  j: number;
+  pages: Pages;
+};
+
+const Body = (props: Props) => {
   return (
-    <>
-      <p>この小説は右と下に続くよ。</p>
-      <p> 左と上に戻ることもできるよ。</p>
-      <p>二つの方向に分岐するわけだよ。</p>
-      <p> わかるかな？</p>
-    </>
+    <div>
+      {props.pages[props.i]?.[props.j]?.split("\n").map((line, index) => (
+        <p key={`line-${index}`}>{line}</p>
+      ))}
+    </div>
   );
 };
 
