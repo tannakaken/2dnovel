@@ -1,10 +1,25 @@
+html,body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 .app {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  /*
+    vhは「Webページとしての高さ」ではなく
+    ブラウザの高さなので、
+    スマートフォンのアドレスバーなどがあると、その分高さがはみ出てスクロールバーが出てしまう。
+    これはpcのブラウザの開発ツールでスマートフォンでの表示を確かめているときには気づかないので注意
+    参照 https://qiita.com/fruitriin/items/71c0cb9aeca28882bdc4
+   */
+  height: 100%; /* 上記記事で紹介されているテクニック */
 }
 
 .body {
@@ -16,6 +31,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   max-width: 50%;
+  /* white-space: nowrap; */
 }
 
 .horizontal-icon {
