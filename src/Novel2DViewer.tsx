@@ -41,7 +41,7 @@ export const Novel2DViewer = (props: Props) => {
   /**
    * 下側にページがあるか？
    */
-  const canGoDown = props.pages[i]?.[j + 1] != undefined;
+  const canGoDown = props.pages[i]?.[j + 1] !== undefined;
   const handlers = useSwipeable({
     onSwipedDown: () => {
       if (canGoDown) {

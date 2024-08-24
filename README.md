@@ -44,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## メール送信フォームを作る
+
+多分 Cloudflare Workers で作れそう
+
+https://qiita.com/khayama/items/87640de36b72d2ceaade
